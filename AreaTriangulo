@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float base,altura,Area;
+    cout<<"Ingresar la base: ";
+    cin>>base;
+    cout<<"Ingresar la altura: ";
+    cin>>altura;
+    Area=(base*altura)/2;
+    cout<<"El Area es: "<<Area;
+    
+    
+    
+    return 0;
+}
