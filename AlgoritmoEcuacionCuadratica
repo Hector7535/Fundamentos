@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    float a, b, c, dis, x1, x2, s, R, I, x;
+    cout<<"Algoritmo para resolver: ax^2+bx+c=0"<<endl;
+    cout<<"ingrese a"<<endl;
+    cin>>a;
+    cout<<"ingrese b"<<endl;
+    cin>>b;
+    cout<<"ingrese c"<<endl;
+    cin>>c;
+    if (a==0)
+    {
+      s=-c/b;
+      cout<<"la solucion es: "<<s;
+    }
+    else
+    {
+      dis=(b*b)-(4*a*c);
+      if (dis>=0)
+      {
+        if (dis==0)
+        {
+            x=-b/(2*a);
+            cout<<"La unica solucion es: "<<x;
+        }
+        else
+        {
+            x1=(-b+sqrt(dis))/(2*a);
+            x2=(-b-sqrt(dis))/(2*a);
+            cout<<"Las soluciones son: "<<x1<<" y "<<x2;
+        }
+      }  
+      else
+      {
+        R=-b/(2*a);
+        I=sqrt(-dis);
+        cout<<"La ecuacion no tiene raices reales, las soluciones imaginarias son: "<<R<<"+("<<I<<")i y "<<R<<"-("<<I<<")i";
+      }
+    }
+    return 0;
+}
