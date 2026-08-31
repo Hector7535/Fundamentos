@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    float x, y;
+    cout<<"Ingrese la coordenada x: ";
+    cin>>x;
+    cout<<"Ingrese la coordenada y: ";
+    cin>>y;
+    if (x==0||y==0)
+        cout<<"El punto no esta dentro de ningun cuadrante";
+    else
+    {
+      if (x>0&&y>0)
+          cout<<"El punto esta en el primer cuadrante";
+      else
+      {
+          if (x<0&&y>0)
+              cout<<"El punto esta en el segundo cuadrante";
+          else
+          {
+              if (x<0&&y<0)
+                  cout<<"El punto esta en el tercer cuadrante";
+              else
+                  cout<<"El punto esta en el cuarto cuadrante";
+          }
+      }
+    }
+    return 0;
+}
