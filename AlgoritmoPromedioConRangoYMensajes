@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    float n1, n2, n3, n4, p;
+    cout<<"Ingrese la primera nota"<<endl;
+    cin>>n1;
+    cout<<"Ingrese la segunda nota"<<endl;
+    cin>>n2;
+    cout<<"Ingrese la tercera nota"<<endl;
+    cin>>n3;
+    cout<<"Ingrese la cuarta nota"<<endl;
+    cin>>n4;
+    if (n1<0||n1>10||n2<0||n2>10||n3<0||n3>10||n4<0||n4>10)
+    {
+        cout<<"Error:Las calificaciones no son validas";
+    }
+    else
+    {
+        p=(n1+n2+n3+n4)/4;
+        cout<<"el promedio es: "<<p<<endl;
+        if (p>=6&&p<=10)
+        cout<<"Aprobado";
+        else
+        {
+            if (p>=5&&p<6)
+            cout<<"Derecho a extraordinario";
+            else
+            {
+                if (p>=2&&p<5)
+                cout<<"Derecho a titulo";
+                else
+                {
+                    if (p>=0&&p<2)
+                    cout<<"Sin derecho a acreditar";
+                }
+            }
+        }
+        
+    }
+    return 0;
+}
