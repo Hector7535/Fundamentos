@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int o, c, ch=0, chcq=0, cpf=0, cs=0;
+    double precio=0, suma=0;
+    float t, h=0, hcq=0, pf=0, s=0;
+    do 
+    {
+        cout<<"Menu de productos"<<endl;
+        cout<<"1.- Hamburguesa (3bs)"<<endl;
+        cout<<"2.- Hamburguesa con queso (5bs)"<<endl;
+        cout<<"3.- Papas fritas (2bs)"<<endl;
+        cout<<"4.- Soda (2,5bs)"<<endl;
+        cout<<"0.- Salir"<<endl;
+        cout<<"Ingrese una opcion"<<endl;
+        cin>>o;
+        switch (o)
+        {
+            case 0:
+                cout<<"Saliendo"<<endl;
+                break;
+            case 1:
+                precio=3;
+                break;
+            case 2:
+                precio=5;
+                break;
+            case 3:
+                precio=2;
+                break;
+            case 4:
+                precio=2.5;
+                
+                break;
+            default:
+                cout<<"opcion invalida";
+                return 0;
+        }
+        if (o>0&&o<=4)
+        {
+            cout<<"Ingresar la cantidad"<<endl;
+            cin>>c;
+            t=precio*c;
+            suma=suma+t;
+            if (o==1) {
+                h=h+t;
+                ch=ch+c; }
+            else
+                    if (o==2) {
+                        hcq=hcq+t;
+                        chcq=chcq+c; }
+                    else
+                            if (o==3) {
+                            pf=pf+t;
+                            cpf=cpf+c; }
+                            else
+                                if (o==4) {
+                                s=s+t;
+                                cs=cs+c; }
+        }
+    } while (o!=0);
+    cout<<"         ITEM                    CANTIDAD      TOTAL PARCIAL"<<
+    endl<<"Hamburguesa (3bs)               "<<ch<<"             "<<h<<
+    endl<<"Hamburguesas con queso (5bs)    "<<chcq<<"             "<<hcq<<
+    endl<<"Papas fritas (2bs)              "<<cpf<<"             "<<pf<<
+    endl<<"soda (2.5bs)                    "<<cs<<"             "<<s<<endl<<
+    endl<<"TOTAL                           "<<ch+chcq+cpf+cs<<"             "<<suma;
+
+    return 0;
+}
