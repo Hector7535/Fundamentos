@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int an, aa, mn, ma, dn,da, ae, me, de, Mdn, Mda;
+    cout<<"Ingrese la fecha de nacimiento en la forma año, mes y día"<<endl;
+    cin>>an>>mn>>dn;
+
+    if (mn>12||mn<1)
+        cout<<"Mes de nacimiento inválido";
+    else
+    {
+        if (mn==2)
+        {
+            if ((an%4==0&&an%100!=0)||(an%400==0))
+            Mdn=29;
+            else
+            Mdn=28;
+        }
+        else
+        {
+            if (mn==4||mn==6||mn==9||mn==11)
+            Mdn=30;
+            else
+            {
+                Mdn=31;
+            }
+        }
+    }
+    if (dn<1||dn>Mdn)
+        cout<<"Día de nacimiento inválido";
+    else
+    {
+        cout<<"Ingrese la fecha actual en la forma año, mes y día"<<endl;
+        cin>>aa>>ma>>da;
+        
+        if (ma>12||ma<1)
+            {
+            cout<<"Mes actual inválido";
+            return 0;
+            }
+        if (an>aa)
+            cout<<"Error: El año de nacinmiento no puede ser mayor al año actual";
+        else
+        {
+            if (ma==2)
+            {
+                if ((aa%4==0&&aa%100!=0)||(aa%400==0))
+                    Mda=29;
+                else
+                    Mda=28;
+            }
+            else
+        {
+            if (ma==4||ma==6||ma==9||ma==11)
+            Mda=30;
+            else
+            {
+                Mda=31;
+            }
+        }
+        if (da<1||da>Mda)
+        cout<<"Día actual inválido";
+        else
+        {
+            if (me>ma&&de>da)
+            {
+                ae=aa-an-1;
+                me=12+ma-mn-1;
+                de=30+da-dn;
+                cout<<"Su edad es: "<<ae<<" años, "<<me<<" meses y "<<de<<" días";
+            }
+            else
+            {
+                if (me>ma)
+                {
+                ae=aa-an-1;
+                me=12+ma-mn;
+                de=da-dn;
+                cout<<"Su edad es: "<<ae<<" años, "<<me<<" meses y "<<de<<" días";
+                }
+                else
+                {
+                    if (de>da)
+                    {
+                    ae=aa-an;
+                    me=ma-mn-1;
+                    de=Mda+da-dn;
+                    cout<<"Su edad es: "<<ae<<" años, "<<me<<" meses y "<<de<<" días";
+                    }
+                    else
+                    {
+                    ae=aa-an;
+                    me=ma-mn;
+                    de=da-dn;
+                    cout<<"Su edad es: "<<ae<<" años, "<<me<<" meses y "<<de<<" días";
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+}
