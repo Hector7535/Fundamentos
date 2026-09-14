@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int cont, a, suma=0; // CONT=0
+    cout<<"Ingrese hasta que numero se sumara"<<endl;
+    cin>>a;
+    cont=0;
+    cout<<"Suma=";
+    do
+    {
+        cont=cont+1;
+        cout<<"+"<<cont;
+        suma=suma+cont;
+    }
+    while (cont<a);
+    cout<<endl<<"La suma total es: "<<suma;
+    return 0;
+}
