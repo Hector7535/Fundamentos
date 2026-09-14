@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int cont, a, suma=0; // suma=0
+    cout<<"Ingrese hasta que numero entero se debe sumar"<<endl;
+    cin>>a;
+    cout<<"Suma=";
+    for (cont=1; cont<=a; cont=cont+1)
+    {
+        cout<<"+"<<cont;
+        suma=suma+cont;
+    }
+    cout<<endl<<"La suma total es: "<<suma<<endl;
+
+    return 0;
+}
