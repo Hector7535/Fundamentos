@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, ma, me, num, numero, cont=1;
+    float pr, suma;
+    cout<<"Ingrese el numero de veces a repetir"<<endl;
+    cin>>n;
+    cout<<endl<<"Ingrese un numero"<<endl;
+    cin>>num;
+    ma=num;
+    me=num;
+    suma=num;
+    do {
+        cont++;
+        cout<<"ingresa un numero: "<<endl;
+        cin>>numero;
+        suma=suma+numero;
+        if (ma<numero)
+        ma=numero;
+        if (numero<=me)
+        me=numero;
+    } while (cont<n);
+    pr=(suma/n);
+    cout<<"El promedio es "<<pr<<", el mayor es "<<ma<<" y el menor es "<<me;
+    return 0;
+}
