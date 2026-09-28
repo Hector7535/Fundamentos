@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, cont=2, contador=1, i;
+    bool flag;
+    cout<<"Ingrese la cantidad de numeros primos a mostrar: ";
+    cin>>n;
+        while (contador<=n) {
+            flag=true;
+            for (i=2; i<=cont; i++) {
+                if(cont%i==0)
+                flag=false;
+                break;
+            }
+            if (flag==true) {
+                cout<<cont<<", ";
+                contador++;
+            }
+            cont++;
+        }
+    return 0;
+}
