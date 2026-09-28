@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, cont, contador, i;
+    bool flag;
+    do {
+        cont=2;
+        contador=1;
+    cout<<endl<<"Ingrese un numero, o 0 para salir: ";
+    cin>>n;
+        while (contador<=n) {
+            flag=true;
+            for (i=2; i<cont; i++) {
+                if(cont%i==0)
+                flag=false;
+                break;
+            }
+            if (flag==true) {
+                cout<<cont<<", ";
+                contador++;
+            }
+            cont++;
+        }
+        
+    } while (n!=0);
+    return 0;
+}
