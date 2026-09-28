@@ -8,7 +8,7 @@ int main()
     cin>>n;
         while (contador<=n) {
             flag=true;
-            for (i=2; i<=cont; i++) {
+            for (i=2; i<cont; i++) {
                 if(cont%i==0)
                 flag=false;
                 break;
