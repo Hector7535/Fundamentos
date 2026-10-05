@@ -1,0 +1,81 @@
+#include <iostream>
+
+
+using namespace std;
+
+float cubo(float n);
+int menor(int a, int b);
+int signo(float c);
+
+int main()
+{
+	float n;
+	int opcion, a, b, c;
+	// Menu
+	do {
+		//Desplegar las opciones
+		cout << "\t\t Menu \n";
+		cout << "\t\t ==== \n";
+		cout << "1. cubo de numero real\n";
+		cout << "2. menor 2 numeros enteros\n";
+		cout << "3. determinar signo\n";
+		cout << "0. Salir\n";
+		cout << "Opcion: ";
+		cin >> opcion;
+		// Condicional multiple
+		switch (opcion)
+		{
+		case 1: cout << "Ingrese el numero a elevar al cubo:";
+			cin >> n;
+			cout << "El numero elevado al cubo es: " << cubo(n)<<endl;
+			break;
+		case 2: cout << "ingrese el primer numero:";
+			cin >> a;
+			cout << "ingrese el segundo numero:";
+			cin >> b;
+			cout << "El menor es: " << menor(a, b)<<endl;
+			break;
+		case 3: cout << "Ingrese el numero: ";
+			cin >> c;
+			cout << "El signo es: " << signo(c)<<endl;
+			break;
+		case 0: cout << "Saliendo del Menu";
+			return 0;
+			break;
+		default: cout << "ERROR de opcion";
+			break;
+		}
+		system("pause");
+		system("cls");
+	} while (opcion != 0);
+	return 0;
+
+}
+
+
+// Declarar o definir funciones
+
+float cubo(float n) 
+{
+	return n*n*n;
+}
+int menor(int a, int b)
+{
+	if (a > b)
+		return b;
+	else
+		return a;
+
+}
+int signo(float c)
+{
+	if (c > 0)
+		return 1;
+	else
+	{
+		if (c < 0)
+			return -1;
+		else
+			return 0;
+	}
+}
