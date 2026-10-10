@@ -1,0 +1,81 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+float discriminante(float a, float b, float c);
+float real(float a, float b, float c, float &x1, float &x2, float &dis);
+float unica(float a, float b);
+float imaginaria(float a, float b, float c, float &R, float &I, float &dis);
+float unica0(float b, float c);
+int main()
+{
+    float a, b, c, s, dis, x, x1, x2, R, I;
+    cout<<"Algoritmo para resolver: ax^2+bx+c=0"<<endl;
+    cout<<"ingrese a"<<endl;
+    cin>>a;
+    cout<<"ingrese b"<<endl;
+    cin>>b;
+    cout<<"ingrese c"<<endl;
+    cin>>c;
+    if (a==0&&b!=0)
+    {
+      s=unica0(b, c);
+      cout<<"la solucion es: "<<s;
+    }
+    else {
+        if (a==0&&b==0) {
+        cout<<"La ecuación no tiene variable, ingrese una ecuación válida";
+        return 0;
+        }
+      dis=discriminante(a, b, c);
+      if (dis>=0)
+      {
+        if (dis==0)
+        {
+            x=unica(a, b);
+            cout<<"La unica solucion es: "<<x;
+        }
+        else
+        {
+            real(a, b, c, x1, x2, dis);
+            cout<<"Las soluciones son: "<<x1<<" y "<<x2;
+        }
+      }  
+      else
+      {
+        imaginaria(a, b, c, R, I, dis);
+        cout<<"La ecuacion no tiene raices reales, las soluciones imaginarias son: "<<R<<"+("<<I<<")i y "<<R<<"-("<<I<<")i";
+      }
+    }
+    return 0;
+}
+
+float discriminante(float a, float b, float c)
+{
+    float dis;
+    dis=(b*b)-(4*a*c);
+    return dis;
+    
+}
+float real(float a, float b, float c, float &x1, float &x2, float &dis)
+{
+    x1=(-b+sqrt(discriminante(a, b, c)))/(2*a);
+    x2=(-b-sqrt(discriminante (a, b, c)))/(2*a);
+    return x1, x2;
+}
+float unica(float a, float b)
+{
+    return -b/(2*a);
+}
+float imaginaria(float a, float b, float c, float &R, float &I, float &dis)
+{
+    R=-b/(2*a);
+    I=sqrt(-1*(discriminante (a,b,c)));
+    return R, I;
+}
+
+float unica0(float b, float c)
+{
+    return -c/b;
+}
