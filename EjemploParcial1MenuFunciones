@@ -1,0 +1,97 @@
+#include <iostream>
+using namespace std;
+void menu();
+void primerapregunta(int edad, int nota);
+int precio(int peso, int &costo);
+float totalapagar(int cantidad, float precio, float &total);
+
+int main()
+{
+    int edad, nota, opcion, peso, costo, a;
+    float b, total;
+    do {
+        menu();
+        cin >> opcion;
+        switch (opcion)
+        {
+        case 1:
+            // Utilizar una funcion con void
+            cout << "Ingrese la edad: ";
+            cin >> edad;
+            cout << "Ingrese la nota:";
+            cin >> nota;
+            primerapregunta(edad, nota);
+
+            break;
+        case 2:
+            // Utilizar una funcion que duevuelve valor e imprime directamente
+            cout << "Ingrese el peso: ";
+            cin >> peso;
+            cout << "El costo es: " << precio(peso, costo)<<endl;
+            break;
+        case 3:
+            // Utilizar una funcion que devuelve un valor y asigna a una variable
+            cout << "Ingrese la cantidad: ";
+            cin >> a;
+            cout << "Ingrese el precio: ";
+            cin >> b;
+            cout << "El costo total es: "<<totalapagar(a,b, total)<<endl;
+                break;
+        case 0: cout << "Saliendo...";
+            break;
+        default: cout << "opcion invalida";
+            break;
+        }
+        system("pause");
+        system("cls");
+    } while (opcion != 0);
+
+}
+
+
+void menu()
+{
+    cout << "\t\t Menu \n";
+    cout << "1.- Determinar la aprobacion\n";
+    cout << "2.- Determinar el precio\n";
+    cout << "3.- Calcular el total a pagar\n";
+    cout << "0.- Salir\n";
+    cout << "Opcion: ";
+}
+void primerapregunta(int edad, int nota)
+{
+    if (edad >= 18) {
+        if (nota >= 70)
+            cout << "APROBADO-MAYOR DE EDAD\n";
+        else
+            cout << "REPROBADO - MAYOR DE EDAD\n";
+    }
+    else {
+        if (nota >= 60)
+            cout << "APROBADO - MENOR DE EDAD\n";
+        else
+            cout << "REPROBADO - MENOR DE EDAD\n";
+    }
+}
+int precio(int peso, int &costo)
+{
+    if (peso <= 2)
+        costo=15;
+    else 
+    if (peso > 2 && peso <= 5)
+        costo = 25;
+    else 
+    if (peso > 5 && peso <= 10)
+        costo = 40;
+    else
+        costo=60;
+    return costo;
+}
+float totalapagar(int cantidad, float precio, float &total)
+{
+    if (cantidad >= 3)
+        total = cantidad * precio *  0.8;
+    else
+        total = cantidad * precio *  0.9;
+    return total;
+}
